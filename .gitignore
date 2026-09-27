@@ -1,0 +1,31 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local customer data and generated evaluation outputs
+/data/
+/reports/
+
+# Archived experiments and model checkpoints
+/archive/
+/catboost_info/
+
+# Generated duplicate demo bundle
+/Customer_Churn_Demo/
+/Customer_Churn_Demo.zip
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log

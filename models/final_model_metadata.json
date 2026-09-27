@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "deployment_status": "verified",
+  "model_name": "CatBoost",
+  "model_type": "CatBoostClassifier",
+  "artifact": "customer_churn_production_model.joblib",
+  "parameters": {
+    "iterations": 600,
+    "learning_rate": 0.03,
+    "depth": 5,
+    "l2_leaf_reg": 5,
+    "loss_function": "Logloss",
+    "random_seed": 42,
+    "verbose": false,
+    "allow_writing_files": false
+  },
+  "threshold": 0.36000000000000015,
+  "selected_features": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "categorical_features": [
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "numeric_features": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "training_strategy": {
+    "original_training_samples": 5634,
+    "balanced_training_samples": 8278,
+    "class_0_samples": 4139,
+    "class_1_samples": 4139,
+    "balancing_method": "Random oversampling of the training split only",
+    "random_state": 42
+  },
+  "test_set": {
+    "samples": 1409,
+    "class_0_samples": 1035,
+    "class_1_samples": 374,
+    "test_set_used_for_training": false,
+    "exact_profile_overlap_count": 7,
+    "overlap_note": "Seven identical feature-and-target profiles occur in both saved split files. The raw source contains 7,043 unique customer IDs and the split partitions rows; identical profiles therefore do not by themselves indicate that the same customer was placed in both splits."
+  },
+  "validation": {
+    "split": "80/20 stratified",
+    "random_state": 42,
+    "threshold_selection": "5-fold out-of-fold predictions on the training split",
+    "metrics_source": "Recomputed from the saved production artifact against data/processed/test.csv",
+    "holdout_metrics_recomputed": true
+  },
+  "final_test_metrics": {
+    "accuracy": 0.7963094393186657,
+    "precision": 0.5960264900662252,
+    "recall": 0.7219251336898396,
+    "f1": 0.652962515114873,
+    "roc_auc": 0.8717468805704099,
+    "pr_auc": 0.7149885373935962,
+    "brier": 0.1245008868551033,
+    "true_negative": 852,
+    "false_positive": 183,
+    "false_negative": 104,
+    "true_positive": 270
+  }
+}
